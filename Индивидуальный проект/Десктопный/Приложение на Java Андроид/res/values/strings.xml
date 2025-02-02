@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Guess The Number</string>
+    <string-array name="levels_array">
+        <item>Легкий (1-10)</item>
+        <item>Средний (1-100)</item>
+        <item>Сложный (1-1000)</item>
+    </string-array>
+</resources>
