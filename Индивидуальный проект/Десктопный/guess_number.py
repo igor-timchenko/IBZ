@@ -52,6 +52,10 @@ class GuessTheNumberApp:
     def check_guess(self):
         try:
             guess = int(self.guess_entry.get())
+            if (self.max_attempts == 5 and (guess < 1 or guess > 10)) or (self.max_attempts == 7 and (guess < 1 or guess > 50)) or (self.max_attempts == 10 and (guess < 1 or guess > 100)):
+                messagebox.showwarning("Ошибка", f"Пожалуйста, введите число в диапазоне от {self.max_attempts == 5 and '1 до 10' or self.max_attempts == 7 and '1 до 50' or '1 до 100'}.")
+                return
+
             self.attempts += 1
             
             if guess < self.secret_number:
@@ -82,9 +86,6 @@ class GuessTheNumberApp:
         self.secret_number = None
         self.attempts = 0
         self.max_attempts = 0
-        self.guess_label.config(text="")
-        self.guess_entry.delete(0, tk.END)
-
 if __name__ == "__main__":
     root = tk.Tk()
     app = GuessTheNumberApp(root)
