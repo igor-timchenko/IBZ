@@ -4,7 +4,7 @@ import random # Импортируем модуль random для генерац
 
 # Приложение "Угадай число"
 class GuessTheNumberApp:
-    # Функция - инициализация главного окна приложения
+    # Метод (функция) - инициализация главного окна приложения
     def __init__(self, master):
         
         self.master = master # Сохраняем ссылку на главное окно
@@ -42,7 +42,7 @@ class GuessTheNumberApp:
         self.submit_button = tk.Button(master, text="Отправить", command=self.check_guess) # Создаем кнопку "Отправить"
         self.submit_button.pack() # Размещаем кнопку в окне 
 
-    # Функция - начало новой игры с заданным уровнем сложности и количеством попыток
+    # Метод (функция) - начало новой игры с заданным уровнем сложности и количеством попыток
     def start_game(self, difficulty, max_attempts):
         
         self.difficulty = difficulty # Устанавливаем уровень сложности
@@ -68,7 +68,7 @@ class GuessTheNumberApp:
         self.attempts = 0 # Сбрасываем счетчик попыток на ноль
         self.guess_label.config(text=f"Я загадал число {range_text}. У вас {max_attempts} попыток. Попробуйте угадать его!") # Обновляем текст метки с подсказкой о загаданном числе и количестве попыток
 
-    # Функция - проверка предположения игрока
+    # Метод (функция) - проверка предположения игрока
     def check_guess(self):
 
         try:
@@ -108,7 +108,7 @@ class GuessTheNumberApp:
         except ValueError:
             messagebox.showwarning("Ошибка", "Пожалуйста, введите целое число.") # Выводим предупреждение об ошибке ввода
 
-    # Функция - сброс переменных состояния игры
+    # Метод (функция) - сброс переменных состояния игры
     def reset_game(self):
         
         self.difficulty = None # Сбрасываем уровень сложности
